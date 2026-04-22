@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API Pulse — https://api.github.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg: #06060a; --surface: #0e0e16; --surface2: #16162a;
+    --border: #252540; --text: #e4e4f0; --dim: #5a5a80;
+    --accent: #7c3aed; --accent2: #06b6d4; --green: #22c55e;
+    --red: #ef4444; --yellow: #eab308; --magenta: #d946ef;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; padding: 2rem; max-width: 1000px; margin: 0 auto; }
+.hero { text-align: center; padding: 2.5rem 1rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.hero h1 { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--magenta), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero .url { font-family: 'Space Mono', monospace; color: var(--accent2); font-size: 1rem; margin-top: 0.5rem; word-break: break-all; }
+.hero .meta { color: var(--dim); font-size: 0.85rem; margin-top: 0.5rem; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.2rem; }
+.card h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+.big-stats { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+.big-stat { text-align: center; flex: 1; min-width: 100px; padding: 1rem; background: var(--surface2); border-radius: 10px; }
+.big-num { font-family: 'Space Mono', monospace; font-size: 1.8rem; font-weight: 700; }
+.big-label { font-size: 0.75rem; color: var(--dim); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 1px; }
+.good { color: var(--green); } .warn { color: var(--yellow); } .bad { color: var(--red); }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+thead th { text-align: left; padding: 0.5rem; border-bottom: 2px solid var(--border); color: var(--dim); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
+tbody td { padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--border); font-family: 'Space Mono', monospace; font-size: 0.8rem; }
+.dim { color: var(--dim); font-family: 'Syne', sans-serif; }
+.sev-high { color: var(--red); } .sev-medium { color: var(--yellow); } .sev-low { color: var(--dim); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+.kv { display: flex; justify-content: space-between; padding: 0.4rem 0.7rem; background: var(--surface2); border-radius: 6px; font-size: 0.85rem; }
+.kv span:first-child { color: var(--dim); } .kv span:last-child { font-family: 'Space Mono', monospace; font-weight: 600; }
+.histogram { display: flex; align-items: flex-end; gap: 3px; height: 140px; padding-bottom: 1.5rem; position: relative; }
+.bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; }
+.bar { width: 100%; background: linear-gradient(to top, var(--accent), var(--magenta)); border-radius: 4px 4px 0 0; position: relative; min-height: 3px; transition: height 0.3s; }
+.bar-val { position: absolute; top: -16px; font-size: 0.6rem; font-family: 'Space Mono', monospace; color: var(--text); white-space: nowrap; }
+.bar-label { font-size: 0.55rem; color: var(--dim); margin-top: 0.3rem; font-family: 'Space Mono', monospace; }
+.status-row { display: flex; align-items: center; gap: 0.7rem; margin: 0.4rem 0; font-size: 0.85rem; }
+.status-code { font-family: 'Space Mono', monospace; font-weight: 700; min-width: 35px; }
+.status-bar-bg { flex: 1; height: 8px; background: var(--surface2); border-radius: 4px; overflow: hidden; }
+.status-bar { height: 100%; border-radius: 4px; }
+.status-bar.good { background: var(--green); } .status-bar.warn { background: var(--yellow); } .status-bar.bad { background: var(--red); }
+footer { text-align: center; padding: 2rem; color: var(--dim); font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+footer a { color: var(--accent); text-decoration: none; }
+@media (max-width: 600px) { body { padding: 1rem; } .big-stats { flex-direction: column; } .grid-2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="hero">
+    <h1>🔍 API Pulse</h1>
+    <div class="url">https://api.github.com</div>
+    <div class="meta">Generated on 2026-04-22 06:32:50</div>
+</div>
+
+        <div class="card">
+            <h3>🔍 Probe Results</h3>
+            <div class="big-stats">
+                <div class="big-stat"><div class="big-num warn">403</div><div class="big-label">Status</div></div>
+                <div class="big-stat"><div class="big-num">53ms</div><div class="big-label">Latency</div></div>
+                <div class="big-stat"><div class="big-num">0B</div><div class="big-label">Size</div></div>
+                <div class="big-stat"><div class="big-num bad">0/100</div><div class="big-label">Security</div></div>
+            </div>
+        </div>
+        
+            <div class="card">
+                <h3>🔒 TLS / SSL</h3>
+                <div class="grid-2">
+                    <div class="kv"><span>Protocol</span><span>TLSv1.3</span></div>
+                    <div class="kv"><span>Cipher</span><span>TLS_AES_256_GCM_SHA384</span></div>
+                    <div class="kv"><span>Issuer</span><span>Anthropic</span></div>
+                    <div class="kv"><span>Days left</span><span class="warn">21</span></div>
+                </div>
+            </div>
+        <div class="card">
+            <h3>🛡️ Security Headers</h3>
+            <table><thead><tr><th>Header</th><th>Status</th><th>Severity</th><th>Purpose</th></tr></thead>
+            <tbody><tr><td>HSTS</td><td>❌</td><td class="sev-high">high</td><td class="dim">Forces browsers to use HTTPS</td></tr><tr><td>CSP</td><td>❌</td><td class="sev-high">high</td><td class="dim">Prevents XSS and injection attacks</td></tr><tr><td>X-Content-Type-Options</td><td>❌</td><td class="sev-medium">medium</td><td class="dim">Prevents MIME-type sniffing</td></tr><tr><td>X-Frame-Options</td><td>❌</td><td class="sev-medium">medium</td><td class="dim">Prevents clickjacking</td></tr><tr><td>X-XSS-Protection</td><td>❌</td><td class="sev-low">low</td><td class="dim">Legacy XSS filter (modern CSP is better)</td></tr><tr><td>Referrer-Policy</td><td>❌</td><td class="sev-low">low</td><td class="dim">Controls referrer information leakage</td></tr><tr><td>Permissions-Policy</td><td>❌</td><td class="sev-medium">medium</td><td class="dim">Controls browser feature access</td></tr></tbody></table>
+        </div>
+<footer>Generated by <a href="https://github.com/YOUR_USERNAME/api-pulse">api-pulse</a> — the developer's API Swiss Army knife</footer>
+</body>
+</html>
