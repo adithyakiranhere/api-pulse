@@ -102,7 +102,7 @@ Use cases: testing auth flows, signup → verify → login chains, CRUD lifecycl
 ## Install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/api-pulse.git
+git clone https://github.com/adithyakiranhere/api-pulse.git
 cd api-pulse
 pip install -r requirements.txt
 ```
