@@ -1,6 +1,7 @@
 """
 API Pulse — The Developer's API Swiss Army Knife
 Probe, benchmark, compare, and diagnose any API from your terminal.
+by adithyakiranhere
 """
 
 import argparse
